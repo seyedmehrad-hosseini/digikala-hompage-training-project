@@ -1,0 +1,2433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="icon" href="images/android-icon-192x192.png">
+    <link rel="stylesheet" href="fonts/WebFonts/css/fontiran.css">
+    <script src="https://kit.fontawesome.com/751d22ea0f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap/jquery-3.6.0.slim.min.js">
+    <link rel="stylesheet" href="bootstrap/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body id="total-body" style="direction: rtl;">
+    <div class="myheader position-fixed" style="z-index: 45; background-color: white;" >
+        
+        <div>
+            <img src="images/topheader.gif" class=" hidden-in-mobile w-100 " style="height: 60px; object-fit: cover;" alt="">
+            <img src="images/topheader.gif" class=" hidden-in-pc w-100 " style="height: 35px; object-fit: cover;" alt="">
+        </div>
+        <div >
+            <div class=" pb-0" >
+               
+   
+                <div class="w-100 mymenu p-2 pt-3" id="top-list-header" style="z-index: 55; position: relative; background-color: white; ">
+                    <div style="height: 800px;" class="modal-close"
+                     id="modal-close-id" onclick="closedrop(this)"
+                      data-dropid="mydrop" data-black="modal-black-id" data-close="modal-close-id"></div>
+                    
+                    <i id="listicon" class="listicon hidden-in-pc fa fa-reorder"
+                    onclick="dropmenu(this)" 
+                    data-dropid="mobilelist"
+                    data-black="modal-black-location" data-close="modal-close-list"
+
+                    style="font-size:1.3em; padding-left: 5px;"></i>
+
+                    <img class="logo" src="images/logo.svg" alt="" >
+                   
+                    <i  class="questionicon hidden-in-pc fa fa-question"></i>
+
+                    <span class="hidden-in-pc spanheadermobile"></span>
+                    
+
+
+                    <div class="search-body position-relative " style="height: 43px;">
+                        <div onclick="dropdown(this)" id="search" data-dropid="mydrop" 
+                        data-black="modal-black-id" data-close="modal-close-id"
+                        class="search-header d-flex align-items-center" style=" transition: 2s; position: absolute; border-radius: 8px; height: 43px; background-color: #f0f0f1;">
+                            <button class="border-0 px-3 d-flex align-items-center">
+                                <i class="fa fa-search" style=" color: #a1a3a8; font-size: 1.2em;"></i>
+                            </button>
+                            <div  class="border-0 w-75 " style="background-color: #f0f0f1; font-size: .8em; color:#81858b ;">
+                                جستجو
+                            </div>
+    
+
+                        </div>
+                        <div value ='' class="searchdrop" id="mydrop">
+
+                            <div class="searchopen d-flex align-items-center m-3 pb-3" style="border-bottom: 1px solid #008eb2;">
+                                <i id="close-search-mobile" onclick="closedrop(mydrop)" class='hidden-in-pc fas fa-arrow-right'
+                                style=" z-index: 100;"></i>
+                                <button class="hidden-in-mobile border-0 px-3 d-flex align-items-center" style="background-color: #ffffff;">
+                                    <i class="fa fa-search" style=" color: #424750; font-size: 1.1em;"></i>
+                                </button>
+                                <input id="search-input" oninput="search_result(this)" class="search-input form-control border-0 w-100 " style="background-color: #ffffff; font-size: .8em; color:#424750 ; " placeholder="جستجو">
+                                 
+                            </div>
+                            <div id="search-result-body" class="search-result-body">
+                                <div id="search-result-move" value="0" class="search-result-move">
+
+
+
+                                </div>
+                                <div class="body-slider-arrow">
+                                    <i style="top: 40px !important;"                                    
+                                     id="next-slider-search" value="next" onclick="body_slider(this)"
+                                       data-move="search-result-move" data-slider-body="search-result-body"
+                                       data-number-movement="200"
+                                       class='fas fa-chevron-circle-right'></i>
+                                    <i style="top: 40px !important;"                                     
+                                    id="prev-slider-search" value="prev" onclick="body_slider(this)"
+                                       data-move="search-result-move" data-slider-body="search-result-body"
+                                       data-number-movement="200"
+                                       class='fas fa-chevron-circle-left'></i>
+                               </div>
+
+                            </div>
+                            <span class="mx-3 my-2" style="font-weight: 500;">
+                                <img src="images/icon-porfrosh.png" alt="">
+                                جستجوهای پرطرفدار
+                            </span>
+
+
+                            <ul class="iconcolor search-open-list p-3 d-flex align-items-center justify-content-start">
+                                <li> 
+                                    تک ماکارون
+                                    <i class='fas fa-angle-left'></i>
+    
+                                </li>
+                                <li>لیزر موهای زائد 
+                                    <i class='fas fa-angle-left'></i>
+    
+                                </li>
+                                <li>مینی پرسو 
+                                    <i class='fas fa-angle-left'></i>
+    
+                                </li>
+                                <li>اتو بخار مسافرتی 
+                                    <i class='fas fa-angle-left'></i>
+    
+                                </li>
+                        
+                            </ul>
+                            <div class="p-2">
+                                <a href="#">
+                                    <img class="rounded" src="images/searchbanner.jpg" alt="" style="width: 90%; margin: 0 20px; ">
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden-in-mobile loginpc p-2  d-flex align-items-center justify-content-center" style="border-radius: 10px; border :1px solid #e0e0e2; grid-column: 21/23; width: 150px;">
+                        <i class="fa fa-sign-in" style="margin-left: 10px; color: #424750; font-size:24px; transform: rotate(180deg); ;" ></i>
+                        <span style="color: #0c0c0c;font-size: .7em;    font-weight: 600; display: flex;">ورود | ثبت نام</span>
+    
+                    </div>
+                    <div class="hidden-in-pc loginpc p-2  d-flex align-items-center justify-content-end" style=" grid-column: 18/25; margin-right: auto;">
+                        <i class="fa fa-sign-in" style="margin-left: 10px; color: #424750; font-size:24px; transform: rotate(180deg); ;" ></i>
+                        <span style="color: #0c0c0c;font-size: .7em;    font-weight: 600; display: flex;">ورود</span>
+                        <i class="shopincart-mobile hidden-in-pc iconcolor fa fa-shopping-cart" style="margin-right: 30%; text-align: center; transform: scaleX(-1); font-size:24px"></i>
+
+                    </div>
+                    <span class="hidden-in-mobile loginpcspan rounded-3" style="grid-column: 23/24; margin: 0 auto;"></span>
+                    <i class="hidden-in-mobile iconcolor fa fa-shopping-cart" style="grid-column: 24/25; text-align: center; transform: scaleX(-1); font-size:24px"></i>
+                    <span class="hidden-in-pc spanheadermobile" style="margin-bottom :0 !important;"></span>
+                </div>
+                <div   class="bottom-header shadow-sm w-100 d-flex p-2 align-items-center" id="menulist-of-header" style="position: absolute; bottom: -60px; z-index: 50; transition: .3s; background-color: white; grid-column: 1/-1; height: 60px;">
+                    <ul class="hidden-in-mobile navbarpc align-items-center  d-flex" style="margin-bottom: 0px;">
+                        <li style="font-size: 1.3em; font-weight: 500;">
+                            <i class="fa fa-reorder" style="font-size:1em; padding-left: 5px;"></i>
+    
+                            دسته بندی کالاها</li>
+                        <li>
+                            <img src="images/icon-porfrosh.png" alt="">
+                            پرفروش‌ترین‌ها</li>
+                        <li>
+                            <img src="images/icon-takhfif.png" alt="">
+                            تخفیف‌ها و پیشنهادها</li>
+                        <li>
+                            <img src="images/darsad.png" alt="">
+                            شگفت‌انگیزها</li>
+                        <li>سوالی دارید؟</li>
+                        <li>فروشنده شوید!</li>
+                        
+                    </ul>
+                    <span id="locationid" onclick="dropdown(this)" class="location-header d-flex align-items-center justify-content-end justify-start-mobile grid-width-sad"
+                     style="margin-right: auto; grid-column: 21/25; cursor: pointer;"
+                        data-dropid="locationmodal"
+                        data-black="modal-black-location"
+                        data-close="modal-close-location">
+
+                        <i class='location-icon iconcolor fas fa-map-marker-alt' style='font-size:1em; margin-left:10px ;'></i>
+                        <span style="font-size: .7em;">لطفا شهر خود را انتخاب کنید</span>
+                    </span>
+
+                    <i class='hidden-in-pc fas fa-angle-left' style="margin-right: auto;"></i>
+
+                </div>
+            
+
+
+               
+            </div>
+        </div>
+    </div>
+    <div class="hidden-in-mobile" style="width: 100%; height: 186px;"></div>
+    <div id="locationmodal" class="p-3">
+        <div class="d-flex align-items-center">  
+                <span>انتخاب شهر</span>  
+                <i class="hidden-in-pc fa fa-close"
+                 onclick="closedrop(locationmodal)"
+                 style="margin-right: auto; font-size: 1.3em;"
+                 aria-hidden="true"></i>
+        </div>
+        <span class="spanheadermobile"></span>
+        <div style="height: inherit; overflow-y:scroll ;">
+            <span class="d-flexed align-items-center" style="color: #19bfd3; font-size: 1.3em;">
+                <i class='fas fa-crosshairs'></i>
+                <span>مکان‌یابی خودکار</span>
+            </span>
+            <ul class="list-location">
+                <li>
+                    
+                    آذربایجان شرقی
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    آذربایجان غربی
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    اردبیل
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    اصفهان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    البرز
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    ایلام
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    بوشهر
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    تهران
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    چهار محال و بختیاری
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    خراسان جنوبی
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    خراسان رضوی
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    خراسان شمالی
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    خوزستان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    زنجان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    سمنان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    سیستان و بلوچستان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    فارس
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    قزوین
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    قم
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    کردستان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    کرمان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    کرمانشاه
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    کهگیلویه و بویراحمد
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    گلستان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    گیلان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    لرستان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    مازندران
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    مرکزی
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    هرمزگان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    همدان
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+                <li>
+                    
+                    یزد
+                    <i class='fas fa-angle-left'></i>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div id="mobilelist" class=" hidden-in-pc list-menu-mobile" >
+        <div class="p-3">
+            <img style="width: 100px;" src="images/digilogomobil.svg" alt="">
+            <span class="spanheadermobile"></span>
+            <ul class="listmenumobil">
+                <li>
+                    <img src="images/icon-porfrosh.png" alt="">
+                    پرفروش‌ترین‌ها
+   
+                </li>
+                <li>
+                   <img src="images/icon-takhfif.png" alt="">
+                    تخفیف‌ها و پیشنهادها
+   
+                </li>
+                <li>
+                   <img src="images/darsad.png" alt="">
+                    شگفت‌انگیزها
+   
+                </li>
+                <li>
+                   <img src="images/soal.png" alt="">
+                    سوالی دارید؟
+   
+                </li>
+                <li>
+                   <img src="images/market.png" alt="">
+                    فروشنده شوید!
+   
+                </li>
+   
+            </ul>
+            <span class="spanheadermobile"></span>
+        </div>
+
+
+
+         <span class="px-3" style="font-size: .9em; font-weight: 800;">دسته بندی کالاها</span>
+
+         <ul class="menu-category  p-0">
+
+            <li id="cetegory1" onclick="openlist(this)" class="p-0 category1 d-flex align-items-center justify-content-between" data-listid="category-list1">
+                <span>کالای دیجیتال</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list1" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span> دوربین</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+
+            <li id="cetegory2" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list2">
+                <span>خودرو،ابزار و تجهیزات صنعتی</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list2" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+
+            <li id="cetegory3" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list3">
+                <span>مد و پوشاک</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list3" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+            <li id="cetegory4" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list4">
+                <span>اسباب بازی،کودک و نوزاد</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list4" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+            <li id="cetegory5" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list5">
+                <span>زیبایی و سلامت</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list5" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+            <li id="cetegory6" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list6">
+                <span> خانه و آشپزخانه</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list6" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+            <li id="cetegory7" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list7">
+                <span> کتاب،لوازم تحریر و هنر</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list7" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+
+            <li id="cetegory8" onclick="openlist(this)" class="p-0 category2 d-flex align-items-center justify-content-between" data-listid="category-list8">
+                <span> ورزش و سلامت</span>
+                <i class='fas fa-angle-up'></i>
+            </li>
+
+             <ul id="category-list8" class="px-5 py-3 cetegory1-list d-none flex-column">
+                 
+                 <div class="pb-5 pt-2 d-flex align-items-center" style="color:#42475061;">
+                    <span >همه موارد این دسته</span>
+                    <i  class='fas fa-angle-left mx-2'></i>
+
+                 </div>
+                <li id="cetegory1-1" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-1">
+                    <span>لوازم جانبی گوشی</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-1" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">کیف و کاور گوشی</li>
+                    <li class="py-3">پاور بانک (شارژر همراه)</li>
+                    <li class="py-3">پایه نگهدارنده گوشی</li>
+
+                </ul>
+
+
+                <li id="cetegory1-2" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-2">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-2" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">سامسونگ</li>
+                    <li class="py-3">هوآوی</li>
+                    <li class="py-3">اپل</li>
+                    <li class="py-3">شیائومی</li>
+                    <li class="py-3">آنر</li>
+                    <li class="py-3">نوکیا</li>
+
+                </ul>
+
+
+                <li id="cetegory1-3" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-3">
+                    <span> واقعیت مجازی</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-4" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-4">
+                    <span> مچ‌بند و ساعت هوشمند</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-5" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-5">
+                    <span>هدفون، هدست، هندزفری</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-6" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-6">
+                    <span>اسپیکر بلوتوث و با سیم</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-7" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" data-listid="category-list1-7">
+                    <span>هارد، فلش و SSD</span>
+                    <!-- <i class='fas fa-angle-up'></i> -->
+                </li>
+
+
+                <li id="cetegory1-8" style="color:#424750e6;" class="py-3 d-flex align-items-center justify-content-between" onclick="openlist(this)"data-listid="category-list1-8">
+                    <span>گوشی موبایل</span>
+                    <i class='fas fa-angle-up'></i>
+                </li>
+                <ul id="category-list1-8" class="d-none flex-column px-4 py-2">
+                    <div class="pb-3 pt-2 d-flex align-items-center justify-content-between" style="color:#42475061;">
+                        <span >همه موارد این دسته</span>
+                        <i  class='fas fa-angle-left mx-2'></i>
+    
+                     </div>
+                    <li class="py-3">دوربین عکاسی دیجیتال</li>
+                    <li class="py-3">دوربین‌ ورزشی و فیلم برداری</li>
+                    <li class="py-3">دوربین‌ چاپ سریع</li>
+
+                </ul>
+            </ul>
+
+
+         </ul>
+
+    </div>
+    <div style="height: 100%; position: fixed !important;z-index: 65; top: 0px;"
+    class="modal-close" id="modal-close-location" onclick="closedrop(this)"
+    data-dropid="locationmodal"
+    data-black="modal-black-location"
+    data-close="modal-close-location"
+    style="position: fixed;z-index: 65; top: 0px;">
+    </div>
+    <div style="height: 100%; position: fixed !important;z-index: 65; top: 0px;"
+    class="modal-close" id="modal-close-list" onclick="closedrop(this)"
+    data-dropid="mobilelist"
+    data-black="modal-black-location"
+    data-close="modal-close-list"
+    style="position: fixed;z-index: 65; top: 0px;">
+
+    </div>
+
+        <div class="body-container" style="position: relative; width: 100%;  z-index: 30;">
+            <div class="modal-background" id="modal-black-id" >
+
+            </div>
+            <div class="slider">
+                <div id="myslider" class="myslider">
+                    <div class="slider-arrow">
+
+                        <i onclick="big_slider(this)" class='fas fa-chevron-circle-right'
+                        id="nextslide"
+                        data-img-active="img-slider-active"
+                        data-bottom-active="bottom-slider-active"
+                        data-box-id="myslider"
+                        data-bottomsbox-id="list-bottom"
+                        ></i>
+
+                        <i onclick="big_slider(this)" class='fas fa-chevron-circle-left'
+                        
+                        id="prevslide"
+                        data-img-active="img-slider-active"
+                        data-bottom-active="bottom-slider-active"
+                        data-box-id="myslider"
+                        data-bottomsbox-id="list-bottom"></i>
+    
+    
+                    </div>
+                    <div class="bottom-list-slider">
+                        <ul id="list-bottom" class="list-bottom" style="direction: ltr;">
+                            <li class="bottom-slider-active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <a class="img-slider-active" href="#">
+                        <img src="images/1.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/2.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/3.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/4.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/5.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/6.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/7.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/8.jpg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="images/9.jpg" alt="">
+                    </a>
+    
+    
+                </div>
+
+            </div>
+
+            <div class="mybody px-3 my-4" style="max-width: 1400px; margin: 0 auto; width: 100%; background-color: white;">
+                <div class="Bottom-slider container-fluid">
+                    <div class="row ">
+                        <div class="d-flex justify-content-around col-xl-6 col-lg-12">
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/1.png" alt="">
+                                <span class="my-4 fontcolor fontsize">دیجی‌کالا جت</span>
+                            </span>
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/2.png" alt="">
+                                <span class="my-4 fontcolor fontsize">یجی استایل</span>
+                            </span>
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/3.png" alt="">
+                                <sp class="my-4 fontcolor fontsize"an>دیجی پی</span>
+                            </span>
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/4.png" alt="">
+                                <spa class="my-4 fontcolor fontsize"n>دیجی مهر</span>
+                            </span>
+
+                        </div>
+                        <div class="d-flex justify-content-around col-xl-6 col-lg-12">
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/5.png" alt="">
+                                <span class="my-4 fontcolor fontsize">ماموریت‌ها</span>
+                            </span>
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/6.png" alt="">
+                                <span class="my-4 fontcolor fontsize">دیجی پلاس</span>
+                            </span>
+                            <span class="d-flex flex-column align-items-center">
+                                <img style="width: 52px; height: 52px;"
+                                class="rounded-2"
+                                src="images/New folder (2)/7.png" alt="">
+                                <span class="my-4 fontcolor fontsize">دیجی کلاب</span>
+                            </span>
+                            <span class="d-flex flex-column align-items-center">
+                                <span class="d-flex align-items-center justify-content-center" style="display: block; width: 52px ; height: 52px;
+                                border-radius: 50% ;background-color: #dcdee4;">
+                                    <span style="width: 7px;height: 7px; border-radius: 50%; background-color: gray;"></span>
+                                    <span style="width: 7px;height: 7px; border-radius: 50%; background-color: gray;"></span>
+                                    <span style="width: 7px;height: 7px; border-radius: 50%; background-color: gray;"></span>
+                                </span>
+                                
+                                <span class="my-4 fontcolor fontsize">بیشتر</span>
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div id="body-slider" class="body-slider d-flex " style=" background-color: #ef4056; height: 300px; border-radius: 15px; padding: 0 2px;">
+
+                        <div id="body-slider" class="body-slider d-flex " style="overflow: hidden; background-color: #ef4056; height: 300px; border-radius: 15px; padding: 30px 2px;">
+
+                        <div id="move-body" class="slider d-flex" value="0" style=" border-radius : 10px;" >
+                            <div class="see-all d-flex flex-column align-items-center" style="width: 186px; ">
+                                <img style="width: 100px;" src="images/amazing-typo.svg" alt="">
+                                <img style="width: 100px;" src="images/see more.png" alt="">
+                                <a class=" fontsize "style="text-decoration:none;color:white; font-size : 1em !important" href="#">مشاهده‌ی همه</a>
+                            </div>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/1.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/2.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/3.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/4.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/5.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/6.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/7.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/8.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                           <a href="#" >
+                            <div class="card" style="width: 182px; border-radius: 0 !important;">
+                                <img class="card-img-top" src="images/slider2/9.jpg" alt="Card image cap">
+                                <div style="direction: ltr;" class="card-body d-flex align-items-center justify-content-between">
+                                  <span class="card-title fontsize fontcolor" style="direction: rtl; margin: auto 0;"   >125,000تومان</span>
+                                  <span href="#" class="fontsize py-1 px-2" style="border-radius: 10px !important; color: white;  direction: rtl; background-color: #ef394e !important;">26%</span>
+                                </div>
+                              </div>
+                           </a>
+                        </div>
+                    
+                        <div class="body-slider-arrow">
+                             <i id="next-slider1" value="next" onclick="body_slider(this)"
+                                data-move="move-body" data-slider-body="body-slider"
+                                data-number-movement="186"
+                                class='fas fa-chevron-circle-right'></i>
+                             <i id="prev-slider1" value="prev" onclick="body_slider(this)"
+                                data-move="move-body" data-slider-body="body-slider"
+                                data-number-movement="186"
+                                class='fas fa-chevron-circle-left'></i>
+                        </div>
+                </div>
+                </div>
+                <div class="amazingmarket d-flex align-items-center" style="cursor: pointer;">
+                    <div class="background-img"></div>
+                    <div class="container-fluid" style="z-index: 50;">
+                        <div class="row align-items-center">
+                            <div class="col-xl-5 col-lg-12">
+                                <div class="d-flex align-items-center justify-content-start">
+                                    
+                                    <img src="images/amazingmarket/1-sabad.png" alt="">
+                                    <img class="w-50" src="images/amazingmarket/title.svg" alt="">
+                                    <span class="hidden-in-mobile amaz-market-bottun">تا45% تخفیف</span>
+                                
+                                </div>
+
+
+                            </div>
+                            <div class="col-xl-7 col-lg-12">
+                                <div class="d-flex align-items-center justify-content-xl-around justify-content-start">
+                                    <span class="position-relative ml-lg-3 ">
+                                        <img class="amazingmarket-img" src="images/amazingmarket/2.jpg" alt="">
+                                        <span class="amizng-mark-takhfif">10%</span>
+                                    </span>
+                                    <span class="position-relative ml-lg-3">
+                                        <img class="amazingmarket-img" src="images/amazingmarket/3.jpg" alt="">
+                                        <span class="amizng-mark-takhfif">18%</span>
+                                    </span>
+                                    <span class="position-relative ml-lg-3">
+                                        <img class="amazingmarket-img" src="images/amazingmarket/4.jpg" alt="">
+                                        <span class="amizng-mark-takhfif">35%</span>
+                                    </span>
+                                    <span class="hidden-in-mobile position-relative ml-lg-3">
+                                        <img class="amazingmarket-img" src="images/amazingmarket/5.jpg" alt="">
+                                        <span class="amizng-mark-takhfif">45%</span>
+                                    </span>
+                                    <span class="hidden-in-mobile position-relative">
+                                        <img class="amazingmarket-img" src="images/amazingmarket/6.jpg" alt="">
+                                        <span class="amizng-mark-takhfif">13%</span>
+                                    </span>
+                                    <span class="hidden-in-mobile position-relative">
+                                        <img class="amazingmarket-img" src="images/amazingmarket/7.jpg" alt="">
+                                        <span class="amizng-mark-takhfif">10%</span>
+                                    </span>
+                                    <span  class="endelement amaz-market-bottun"  style="font-size: .7em;
+                                     width: 140px; 
+                                     padding: 20px  !important;
+                                     background-color: white;
+                                     color: #39ae00;"
+                                     >
+                                        <span class="hidden-in-mobile">بیش از 100کالا</span>
+                                        <i class='fas fa-arrow-left'></i>
+
+
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="bottom-amzing-market">
+                    <div class="container-fluid">
+                        <div class="row justify-content-around">
+                            <div class="col-xl-3 col-6 px-0 ">
+                                <div class="d-flex justify-content-center p-2">
+                                    <img class="img-bottom-amzing-market " src="images/bottom-amzing-market/1.jpg" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-xl-3 col-6 px-0 ">
+                                <div class="d-flex justify-content-center p-2">
+                                    <img class="img-bottom-amzing-market " src="images/bottom-amzing-market/2.jpg" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-xl-3 col-6 px-0 ">
+                                <div class="d-flex justify-content-center p-2">
+                                    <img class="img-bottom-amzing-market " src="images/bottom-amzing-market/3.jpg" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-xl-3 col-6 px-0 ">
+                                <div class="d-flex justify-content-center p-2">
+                                    <img class="img-bottom-amzing-market " src="images/bottom-amzing-market/4.jpg" alt="">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digikala-category">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 my-fontsize">
+                                <h3 style="font-size: 1em;" class="py-3 d-flex justify-content-center">دسته‌بندی‌های دیجی‌کالا</h3>
+                            </div>
+                            <div>
+                                <div class="mygrid" >
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/1.png" alt="">
+                                        <span class="text-center" style=" font-size: .9em;font-weight: 700;">کالای‌دیجیتال</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/2.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">خودرو،ابزاروتجهیزات صنعتی</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/3.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">مد و پوشاک</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/4.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">اسباب‌بازی،کودک و نوزاد</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/5.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">کالاهای‌سوپرمارکتی</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/6.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">زیبایی ‌و سلامت</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/7.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">خانه ‌و آشپزخانه</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/8.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">کتاب،لواز‌م‌تحریر و هنر</span>
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center"> 
+                                        <img width="80%" src="images/digikala-category/9.png" alt="">
+                                        <span class="text-center" style="font-size: .9em;font-weight: 700;">ورزش و سفر </span>
+                                    </div>
+                                    <div class=" d-flex flex-column align-items-center "  > 
+                                        <img width="80%" src="images/digikala-category/10.png" alt="">
+                                        <span class="text-center" style="grid-area: categoryimg; font-size: .9em;font-weight: 700;">محصولات‌بومی و محلی</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="2-banner d-flex mt-5">
+                    <div  class="w-50  " style="padding: 2%;">
+                        <img class="w-100  " style="border-radius: 10px;" src="images/2-banner/1.jpg" alt="">
+
+                    </div>
+                    <div class="w-50  " style="padding: 2%;">
+                        <img class="w-100 " style="border-radius: 10px;" src="images/2-banner/2.jpg" alt="">
+
+                    </div>
+                </div>
+                <div class="digi-suggest ">
+                    <div class=" my-fontsize ">
+                        <h3 style="font-size: 1em;" class="py-3 d-flex justify-content-center">پیشنهاد دیجی‌کالا</h3>
+                    </div>
+                    <div id="suggest-slider-body" class="suggest-slider-body" >
+                        <div id="suggest-slider-move" value="0" class="d-flex suggest-slider-move" >
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/1-1.jpg" alt="">
+                                    <span >گوشی موبایل</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/1-2.jpg" alt="">
+                                    <span >کیف و کاورگوشی</span>
+                                </div>
+                            </div>
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/2-1.jpg" alt="">
+                                    <span >هدفون،هدست و...</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/2-2.jpg" alt="">
+                                    <span >ساعت‌هوشمند</span>
+                                </div>
+                            </div>
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/3-1.jpg" alt="">
+                                    <span >لپتاپ‌ و الترابوک</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/3-2.jpg" alt="">
+                                    <span >پاوربانک(شارژهمراه)</span>
+                                </div>
+                            </div>
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/4-1.jpg" alt="">
+                                    <span >تبلت</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/4-2.jpg" alt="">
+                                    <span >کنسول‌خانگی</span>
+                                </div>
+                            </div>
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/5-1.jpg" alt="">
+                                    <span >دفتر</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/5-2.jpg" alt="">
+                                    <span >کیبورد(صفحه‌کلید)</span>
+                                </div>
+                            </div>
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/6-1.jpg" alt="">
+                                    <span >ماوس(موشواره)</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/6-2.jpg" alt="">
+                                    <span >یخچال و فریزر</span>
+                                </div>
+                            </div>
+                            <div class="suggest-column d-flex flex-column  justify-content-around" >
+                                <div >
+                                    <img src="images/suggest-slider/7-1.jpg" alt="">
+                                    <span >اصلاح موی‌صورت</span>
+                                </div>
+                                <div >
+                                    <img  src="images/suggest-slider/7-1.jpg" alt="">
+                                    <span >کرم ضدآفتاب</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="body-slider-arrow">
+                            <i id="next-suggest-slider" value="next" onclick="body_slider(this)"
+                               data-move="suggest-slider-move" data-slider-body="suggest-slider-body"
+                               data-number-movement="205"
+                               class='fas fa-chevron-circle-right'></i>
+                            <i id="prev-suggest-slider" value="prev" onclick="body_slider(this)"
+                               data-move="suggest-slider-move" data-slider-body="suggest-slider-body"
+                               data-number-movement="205"
+                               class='fas fa-chevron-circle-left'></i>
+                       </div>
+                    </div>
+                </div>
+                <div class="popular-brands mt-4">
+                    <div class=" my-fontsize ">
+                        <h3 style="font-size: 1em;" class="py-3 d-flex justify-content-center">محبوب ترین برندها</h3>
+                    </div>
+                    <div id="brands-body" class="brands-body">
+                        <div id="brands-move" value="0" class="brands-move d-flex">
+                            <div>
+                                <img src="images/brands/1.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/2.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/3.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/4.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/5.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/6.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/7.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/8.jpg" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/9.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/10.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/11.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/12.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/13.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/14.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/15.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/16.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/17.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/18.png" alt="">
+                            </div>
+                            <div>
+                                <img src="images/brands/19.png" alt="">
+                            </div>
+
+                        </div>
+                        <div class="body-slider-arrow">
+                            <i style="top: 50px !important; z-index: 10;"
+                                id="next-brand-slider" value="next" onclick="body_slider(this)"
+                               data-move="brands-move" data-slider-body="brands-body"
+                               data-number-movement="160"
+                               class='fas fa-chevron-circle-right'></i>
+                            <i style="top: 50px !important; z-index: 10;"
+                                id="prev-brand-slider" value="prev" onclick="body_slider(this)"
+                               data-move="brands-move" data-slider-body="brands-body"
+                               data-number-movement="160"
+                               class='fas fa-chevron-circle-left'></i>
+                       </div>
+                    </div>
+                </div>
+                <div class="bottom-brands">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column">
+                                    <h4 class="my-fontsize">گوشی موبایل</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column1/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column1/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column1/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column1/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column">
+                                    <h4 class="my-fontsize">کیف و کاورگوشی</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column2/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column2/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column2/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column2/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column">
+                                    <h4 class="my-fontsize">هدفون،هدست و هندزفری</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column3/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column3/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column3/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column3/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column" style="border-left: none !important;">
+                                    <h4 class="my-fontsize">ساعت‌هوشمند</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column4/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column4/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-brands/column4/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-brands/column4/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="special-services">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3">
+                                <div class="special-services-img d-flex flex-column">
+                                    <img src="images/special-service/digiplus-logo.svg" alt="">
+                                    <h4 style="color: white; font-size: .8em;" >خدمات ویژه برای اعضای دیجی‌پلاس</h4>
+                                    <span>عضویت</span>
+                                </div>
+                            </div>
+                            <div class="col-xl-9">
+                                <div class="special-services-body">
+                                    <div class="container-fluid p-0">
+                                        <div class="row px-0">
+                                            <div class="col-xl-6 p-0">
+                                                <div class="cash-gift-send ">
+                                                    <div class="title d-flex justify-content-between">
+                                                        <span>هدیه نقدی</span>
+                                                        <a href="#">مشاهده همه </a>
+                                                    </div>
+                                                    <div class="imgs">
+                                                        <div>                                                       
+                                                            
+                                                            <img src="images/special-service/special-gift/1.jpg" alt="">
+                                                        </div>   
+                                                        <div>                                                                                                                                                          
+                                                             <img src="images/special-service/special-gift/2.jpg" alt="">
+                                                        </div>
+                                                        <div><img src="images/special-service/special-gift/3.jpg" alt=""></div>                                                        
+                                                         <div><img class="hidden-in-mobile" src="images/special-service/special-gift/4.jpg" alt=""></div>
+                                                        <div><img class="hidden-in-mobile" src="images/special-service/special-gift/5.jpg" alt=""></div>
+                                                        <div><img class="hidden-in-mobile" src="images/special-service/special-gift/6.jpg" alt=""></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 p-0">
+                                                <div class="cash-gift-send">
+                                                    <div class="title d-flex justify-content-between">
+                                                        <span>ارسال فوری</span>
+                                                        <a href="#">مشاهده همه </a>
+                                                    </div>
+                                                    <div class="imgs">
+                                                        <div>                                                       
+                                                            
+                                                            <img src="images/special-service/special-send/1.jpg" alt="">
+                                                        </div>   
+                                                        <div>                                                                                                                                                          
+                                                             <img src="images/special-service/special-send/2.jpg" alt="">
+                                                        </div>
+                                                        <div><img src="images/special-service/special-send/3.jpg" alt=""></div>                                                        
+                                                         <div><img class="hidden-in-mobile" src="images/special-service/special-send/4.jpg" alt=""></div>
+                                                        <div><img class="hidden-in-mobile" src="images/special-service/special-send/5.jpg" alt=""></div>
+                                                        <div><img class="hidden-in-mobile" src="images/special-service/special-send/6.jpg" alt=""></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="digiclub">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-5">
+                                <img class="digiclub-img" src="images/digiclub/digiclub-logo-white.svg" alt="">
+                            </div>
+                            <div class="col-xl-7">
+                                <div class="digiclub-body">
+                                    <div class="digiclob-body-coloumn"></div>
+                                    <div class="digiclob-body-coloumn"></div>
+                                    <div class="digiclob-body-coloumn"></div>
+
+                                   
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottom-brands">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column">
+                                    <h4 class="my-fontsize">آشنایی با فنون</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column1/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column1/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column1/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column1/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column">
+                                    <h4 class="my-fontsize">کفش ورزشی مردانه</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column2/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column2/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column2/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column2/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column">
+                                    <h4 class="my-fontsize">لپ‌تاپ و الکترابوک</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column3/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column3/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column3/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column3/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3">
+                                <div class="bottom-brands-column" style="border-left: none !important;">
+                                    <h4 class="my-fontsize">ماشین</h4>
+                                    <span style="font-size: .7em; color: #111721bd;">براساس بازدید شما</span>
+                                    <div class="bottom-brands-img">
+                                        <div class="img1" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column4/1.jpg" alt="">
+                                        </div>
+                                        <div class="img2" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column4/2.jpg" alt="">
+                                        </div>
+                                        <div class="img3" style="grid-column: 1/2;">
+                                            <img src="images/bottom-digiclub/column4/3.jpg" alt="">
+                                        </div>
+                                        <div class="img4" style="grid-column: 2/3;">
+                                            <img src="images/bottom-digiclub/column4/4.jpg" alt="">
+                                        </div>
+
+                                    </div>
+                                    <div style="text-align: center; ">                                    
+                                        <a style="text-align: center; font-size: .8em;" href="#">مشاهده‌ی همه</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Bestselling">
+                    <div class="title">
+                        <h4>پرفروش‌ترین‌ کالاها
+                            
+                        </h4>
+                        <a href="#">مشاهده همه</a>
+                        
+                    </div>
+                    <div id="bestsell-body" class="bestsell-body">
+                        <div class="bestsell-move" id="bestsell-move" value="0" >
+                            <div class="bestsell-column">
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/1.jpg" alt="">
+                                    <span>1</span>
+                                    <div >صابون گلنار مدل سبز بسته 6 عددی</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/2.jpg" alt="">
+                                    <span>2</span>
+                                    <div >روغن سرخ کردنی ویسپو - 900 میلی لیتر </div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/3.jpg" alt="">
+                                    <span>3</span>
+                                    <div >هندزفری بلوتوثی مدل  inpods 12</div>
+                                </div>
+                            </div>
+                            <div class="bestsell-column">
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/4.jpg" alt="">
+                                    <span>4</span>
+                                    <div >لازانیا پیش پخت زر ماکارون مقدار 500 گرم</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/5.jpg" alt="">
+                                    <span>5</span>
+                                    <div >روغن مایع مخلوط ویسپو - 810 گرم</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/6.jpg" alt="">
+                                    <span>6</span>
+                                    <div >پوشک مولفیکس سایز 4 بسته 62 عددی </div>
+                                </div>
+                            </div>
+                            <div class="bestsell-column">
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/7.jpg" alt="">
+                                    <span>7</span>
+                                    <div >پودر رختشویی دستی پرسیل مدل لوندر وزن 500 گرم</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/8.jpg" alt="">
+                                    <span>8</span>
+                                    <div >گوشی موبایل سامسونگ مدل Galaxy A12 Nacho SM-A127F/DS دو سیم کارت ظرفیت 64 گیگابایت و رم 4 گیگابایت</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/9.jpg" alt="">
+                                    <span>9</span>
+                                    <div >کنسرو ماهی تن در روغن تحفه - 180 گرم</div>
+                                </div>
+                            </div>
+                            <div class="bestsell-column">
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/10.jpg" alt="">
+                                    <span>10</span>
+                                    <div >کنسرو تن ماهی ساده بریس -180 گرم</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/11.jpg" alt="">
+                                    <span>11</span>
+                                    <div >روغن آفتابگردان پالایش شده ویسپو - 1.5 لیتر </div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/12.jpg" alt="">
+                                    <span>12</span>
+                                    <div >مایع لباسشویی پرسیل مدل گل‌های بهاری وزن 1.1 کیلوگرم </div>
+                                </div>
+                            </div>
+                            <div class="bestsell-column">
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/13.jpg" alt="">
+                                    <span>13</span>
+                                    <div >روغن مایع مخلوط ویسپو - 1.5 لیتر </div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/14.jpg" alt="">
+                                    <span>14</span>
+                                    <div > کافی میکس کلاسیک 3در1 نسکافه - 20 ساشه 20 گرمی</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/15.jpg" alt="">
+                                    <span>15</span>
+                                    <div >گوشی موبایل شیائومی مدل Redmi 9A M2006C3LG دو سیم‌ کارت ظرفیت 32 گیگابایت	</div>
+                                </div>
+                            </div>
+                            <div class="bestsell-column">
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/16.jpg" alt="">
+                                    <span>16</span>
+                                    <div >روغن نیمه جامد ممتاز لادن - 2.7 کیلوگرم </div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/17.jpg" alt="">
+                                    <span>17</span>
+                                    <div >پوشک بیبی کینگ سایز 4 بسته 34 عددی</div>
+                                </div>
+                                <div class="bestsell-row">
+                                    <img src="images/bestselling/18.jpg" alt="">
+                                    <span>18</span>
+                                    <div >گوشی موبایل شیائومی مدل Redmi Note 11 دو سیم‌ کارت ظرفیت 128 گیگابایت و رم 6 گیگابایت</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="body-slider-arrow">
+                            <i style="top: 150px !important; z-index: 10;"
+                                id="next-bestsell-slider" value="next" onclick="body_slider(this)"
+                               data-move="bestsell-move" data-slider-body="bestsell-body"
+                               data-number-movement="320"
+                               class='fas fa-chevron-circle-right'></i>
+                            <i style="top: 150px !important; z-index: 10;"
+                                id="prev-bestsell-slider" value="prev" onclick="body_slider(this)"
+                               data-move="bestsell-move" data-slider-body="bestsell-body"
+                               data-number-movement="320"
+                               class='fas fa-chevron-circle-left'></i>
+                       </div>
+                    </div>
+                </div>
+                <div class="readings">
+                    <div class="title">
+                        <h3>خواندنی‌ها</h3>
+                        <a href="#">مطالب بیشتر در دیجی‌کالا مگ</a>
+                    </div>
+                    <div class="reading-img">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-3 p-1" >
+                                    <div class="card" style="width: 100%;">
+                                        <img class="card-img-top" src="images/reading/1.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                          <p class="card-text" style="height: 30px; display: flex; align-items: center; font-size: .73em;">شخصی‌سازی عمیق بازی Saints Row را ببینید؛ از کاراکتر تا خودرو و سلاح‌ها</p>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-xl-3 p-1" >
+                                    <div class="card" style="width: 100%;">
+                                        <img class="card-img-top" src="images/reading/2.png" alt="Card image cap">
+                                        <div class="card-body">
+                                          <p class="card-text" style="height: 30px; display: flex; align-items: center; font-size: .73em;">۴ نشانه‌ی اختلال ترس از موفقیت (و ۳ روش غلبه بر آن)</p>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-xl-3 p-1" >
+                                    <div class="card" style="width: 100%;">
+                                        <img class="card-img-top" src="images/reading/3.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                          <p class="card-text" style="height: 30px; display: flex; align-items: center; font-size: .73em;">۱۱ انیمیشن برتر که در آن‌ها شخصیت‌های انسانی به حیوانات تبدیل می‌شوند</p>
+                                        </div>
+                                      </div>
+                                </div>
+                                <div class="col-xl-3 p-1" >
+                                    <div class="card" style="width: 100%;">
+                                        <img class="card-img-top" src="images/reading/4.jpg" alt="Card image cap">
+                                        <div class="card-body">
+                                          <p class="card-text" style="height: 30px; display: flex; align-items: center; font-size: .73em;">بازی‌های PS5 به صدر جدول فروش بازگشتند؛ اوج هورایزن و گرن توریسمو</p>
+                                        </div>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <footer class="px-3">
+                <div class="mytitle d-flex align-items-center justify-content-between">
+                    <img src="images/footer/digi.svg" alt="">
+                    <a href="#">
+                        <span class="back-to-top">بازگشت به بالا</span>
+                        <i class='fas fa-angle-up'></i>
+
+                    </a>
+                </div>
+                <div class="phon-number mt-2" style="font-size: .7em;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-2 p-1">تلفن پشتیبانی ۶۱۹۳۰۰۰۰ - ۰۲۱
+                                
+                            </div>
+                            <div class="hidden-in-mobile col-xl-1 p-0 " style="width: 3.3% !important;">
+                                <span >|</span>
+                            </div>
+                            <div class="col-xl-3 p-1">۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-in-mobile footer-img d-flex align-items-center justify-content-center">
+                    <div class="img">
+                        <img src="images/footer/1.svg" alt="">
+                        <span>اﻣﮑﺎن ﺗﺤﻮﯾﻞ اﮐﺴﭙﺮس</span>
+                    </div>
+                    <div class="img">
+                        <img src="images/footer/2.svg" alt="">
+                        <span>امکان پرداخت در محل</span>
+                    </div>
+                    <div class="img">
+                        <img src="images/footer/3.svg" alt="">
+                        <span>۷ روز ﻫﻔﺘﻪ، ۲۴ ﺳﺎﻋﺘﻪ</span>
+                    </div>
+                    <div class="img">
+                        <img src="images/footer/4.svg" alt="">
+                        <span>هفت روز ضمانت بازگشت کالا</span>
+                    </div>
+                    <div class="img">
+                        <img src="images/footer/5.svg" alt="">
+                        <span>ﺿﻤﺎﻧﺖ اﺻﻞ ﺑﻮدن ﮐﺎﻟﺎ</span>
+                    </div>
+                </div>
+                <div class="footer-information mt-5">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3 col-6">
+                                <div class="d-flex flex-column">
+                                    <h3 class="footet-ul" style="font-size: .95em; font-weight: 700;">با دیجی‌کالا</h3>
+                                    <ul class="footet-ul" style=" font-size: .85em; line-height: 40px; color: #81858b;">
+                                        <li>اتاق خبر دیجی‌کالا</li>
+                                        <li>فروش در دیجی‌کالا</li>
+                                        <li>فرصت‌های شغلی</li>
+                                        <li>تماس با دیجی‌کالا</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-6">
+                                <div class="d-flex flex-column">
+                                    <h3 class="footet-ul" style="font-size: .95em; font-weight: 700;">خدمات مشتریان</h3>
+                                    <ul class="footet-ul text-body-1" style=" font-size: .85em; line-height: 40px; color: #81858b;">
+                                        <li>پاسخ به پرسش‌های متداول</li>
+                                        <li>رویه‌های بازگرداندن کالا</li>
+                                        <li>شرایط استفاده</li>
+                                        <li>حریم خصوصی</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="hidden-in-mobile col-xl-3 col-6">
+                                <div class="d-flex flex-column">
+                                    <h3 style="font-size: .95em; font-weight: 700;">راهنمای خرید از دیجی‌کالا</h3>
+                                    <ul class="footet-ul" style=" font-size: .85em; line-height: 40px; color: #81858b;">
+                                        <li>نحوه ثبت سفارش</li>
+                                        <li>رویه ارسال سفارش</li>
+                                        <li>شیوه‌های پرداخت</li>
+                                      
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 px-0">
+                                <div class="with-us">
+                                    <div class="container-fluid px-0">
+                                        <div class="row">
+                                            <div  style="font-size: .95em; font-weight: 700;" class="p-2 footet-ul col-6 col-xl-12">باما همراه باشید!</div>
+                                            <div class="  p-2 d-flex social-media-icon col-6 col-xl-12">
+                                                <i class="fa fa-instagram"></i>
+                                                <i class="fa fa-twitter"></i>
+                                                <i class="fa fa-linkedin-square"></i>
+                                                <i class="fa fa-youtube-play"></i>
+
+
+                                            </div>
+                                            <div style="font-size: .95em; font-weight: 700;" class="hidden-in-mobile p-2 footet-ul col-12">با ثبت ایمیل، از جدید‌ترین تخفیف‌ها با‌خبر شوید</div>
+                                            <div class="col-12">
+                                                <div class="input-group mb-3 ">
+
+                                                    <input class=" form-control search-input " style="color: #424750; height: 50px; border-radius: 7px;border: none !important; background-color: #f0f0f1;" type="email"  placeholder="ایمیل شما" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <div  class="d-flex justify-content-center align-items-center input-group-prepend mx-1" style="height: 50px; width: 50px;">
+                                                        <span class="input-group-text p-1 "   style="height: 50px; width: 50px; text-align: center;  border-radius: 7px; background-color: #e0e0e2; color: white; border: none !important;" id="basic-addon1">ثبت</span>
+                                                      </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+            </footer>
+            <div class="bottom-footer">
+                <div>
+                    <img src="images/footer/bottom/pindo.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digiclub.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/komoda.svg" alt="">
+
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digikala-business.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digimag.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digiMehr.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/diginext.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digipay.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digiplus.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digistyle.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/fidibo.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/jet.svg" alt="">
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digiexpress.svg" alt="">
+
+                </div>
+                <div>
+                    <img src="images/footer/bottom/digiaffiliate.svg" alt="">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-background-location" id="modal-black-location" >
+
+        </div>
+
+
+        <script src="myscripts/scripts.js"></script>
+</body>
+</html>
