@@ -1,2 +1,2 @@
 # digikala homepage-training project
- created with html,css and java script
+Created only with css, html and javascript
