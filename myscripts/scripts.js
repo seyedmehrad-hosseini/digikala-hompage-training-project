@@ -1,5 +1,5 @@
 
-var body_height =window.innerHeight
+var body_height = window.innerHeight
 
 if (window.innerWidth <= 1200){
     
